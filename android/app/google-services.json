@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "987998542175",
+    "project_id": "eden-life-50685",
+    "storage_bucket": "eden-life-50685.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987998542175:android:fd237eb6ab8a23e73cbeea",
+        "android_client_info": {
+          "package_name": "com.example.test_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuApHwoANnbDqtmHt1YgvvnsNq3WJBk6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

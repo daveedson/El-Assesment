@@ -13,7 +13,6 @@ import 'package:test_app/widgets/tracking_components.dart';
 @RoutePage()
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
-
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _HomeScreenState();
 }

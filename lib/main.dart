@@ -1,12 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:test_app/core/router.dart';
+import 'package:test_app/firebase_options.dart';
 import 'package:test_app/ui/app_colors.dart';
 import 'package:test_app/utils/context_utils.dart';
-import 'package:test_app/view/navigation_bar_view.dart';
 
-void main() {
+Future<void> main() async{
+   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp( ProviderScope(child: MyApp()));
 }
 

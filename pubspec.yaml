@@ -43,6 +43,7 @@ dependencies:
   flutter_animate: ^4.2.0+1
   auto_route: ^7.8.4
   chip_list: ^2.4.3+8
+  firebase_core: ^2.22.0
  
 
 dev_dependencies:

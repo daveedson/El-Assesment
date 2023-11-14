@@ -1,0 +1,6 @@
+arb-dir: l10n
+template-arb-file: app_en.arb
+output-localization-file: moniepoint_test_localizations.dart
+output-class: MoniepointLocalization
+output-dir: lib/gen
+synthetic-package: false

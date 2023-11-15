@@ -8,8 +8,7 @@ import 'package:test_app/ui/app_colors.dart';
 import 'package:test_app/utils/extensions.dart';
 import 'package:test_app/view/calculate_screen.dart';
 import 'package:test_app/view/home_screen.dart';
-import 'package:test_app/view/profile_screen.dart';
-import 'package:test_app/view/shipment_history.dart';
+
 import 'package:test_app/widgets/custom_navbar.dart';
 
 @RoutePage()
@@ -19,13 +18,14 @@ class NavigationBarViewScreen extends ConsumerStatefulWidget {
       _NavigationBarViewScreenState();
 }
 
-class _NavigationBarViewScreenState extends ConsumerState<NavigationBarViewScreen> {
+class _NavigationBarViewScreenState
+    extends ConsumerState<NavigationBarViewScreen> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = [
     HomeScreen(),
     CalculateScreen(),
-    ShipmentHistoryScreen(),
-   ProfileScreen()
+    Scaffold(),
+    Scaffold(),
   ];
 
   @override
@@ -35,7 +35,7 @@ class _NavigationBarViewScreenState extends ConsumerState<NavigationBarViewScree
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: _selectedIndex == 1 ||_selectedIndex == 2
+      bottomNavigationBar: _selectedIndex == 1
           ? SizedBox.shrink()
           : CustomLineIndicatorBottomNavbar(
               selectedColor: AppColors.purple,

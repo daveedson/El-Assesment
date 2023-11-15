@@ -49,5 +49,10 @@
     "shipments":"Shipments",
     "arrivingtoday":"Arriving today!",
     "deliverydetails":"Your delivery, #NEJ09187271HU81231 from Atlanta, is arriving today!",
-    "date":"Sep 20,2023"
+    "date":"Sep 20,2023",
+    "orderId": "Order ID",
+    "orderDate":"Order Date",
+    "orderItem":"Order Item",
+    "orderQuantity":"Order Quantity",
+    "orderPrice":"Order Price"
 }

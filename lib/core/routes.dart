@@ -1,6 +1,7 @@
 class Routes {
   // static const splashRoute = '/';
-  static const navigationBarRoute = '/';
+   static const signInRoute = "/";
+  static const navigationBarRoute = '/navigationBarRoute';
   static const homeRoute = '/homeRoute';
   static const inProgessRoute = '/inProgressRoute';
   static const profileRoute = '/profileRoute';

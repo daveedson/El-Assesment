@@ -396,6 +396,36 @@ abstract class MoniepointLocalization {
   /// In en, this message translates to:
   /// **'Sep 20,2023'**
   String get date;
+
+  /// No description provided for @orderId.
+  ///
+  /// In en, this message translates to:
+  /// **'Order ID'**
+  String get orderId;
+
+  /// No description provided for @orderDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Date'**
+  String get orderDate;
+
+  /// No description provided for @orderItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Item'**
+  String get orderItem;
+
+  /// No description provided for @orderQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Quantity'**
+  String get orderQuantity;
+
+  /// No description provided for @orderPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Price'**
+  String get orderPrice;
 }
 
 class _MoniepointLocalizationDelegate extends LocalizationsDelegate<MoniepointLocalization> {

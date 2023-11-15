@@ -156,4 +156,19 @@ class MoniepointLocalizationEn extends MoniepointLocalization {
 
   @override
   String get date => 'Sep 20,2023';
+
+  @override
+  String get orderId => 'Order ID';
+
+  @override
+  String get orderDate => 'Order Date';
+
+  @override
+  String get orderItem => 'Order Item';
+
+  @override
+  String get orderQuantity => 'Order Quantity';
+
+  @override
+  String get orderPrice => 'Order Price';
 }

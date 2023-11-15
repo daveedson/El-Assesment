@@ -6,26 +6,32 @@ import 'package:test_app/core/router.dart';
 import 'package:test_app/firebase_options.dart';
 import 'package:test_app/ui/app_colors.dart';
 import 'package:test_app/utils/context_utils.dart';
+import 'package:test_app/view_model/navigation_viewmodel.dart';
 
-Future<void> main() async{
-   WidgetsFlutterBinding.ensureInitialized();
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
-  runApp( ProviderScope(child: MyApp()));
+  );
+  runApp(ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
-   final _appRouter = AppRouter();
-   MyApp({super.key});
- 
+class MyApp extends ConsumerWidget {
+  final _appRouter = AppRouter();
+  MyApp({super.key});
+
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.read(navigationProvider).router = _appRouter;
     return GestureDetector(
       onTap: () => ContextUtils.hideKeyboard(context),
       child: MaterialApp.router(
         title: 'Test app',
+        
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.purple),
           useMaterial3: true,
@@ -33,7 +39,7 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
         ),
-        routerConfig: _appRouter.config(),
+        routerConfig: ref.read(navigationProvider).router.config(),
       ),
     );
   }

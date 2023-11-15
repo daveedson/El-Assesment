@@ -5,9 +5,8 @@ import 'package:test_app/view/estimate_screen.dart';
 import 'package:test_app/view/home_screen.dart';
 import 'package:test_app/view/inprogrerss_screen.dart';
 import 'package:test_app/view/navigation_bar_view.dart';
-import 'package:test_app/view/profile_screen.dart';
-import 'package:test_app/view/shipment_history.dart';
 import 'package:test_app/view/shipments_screen.dart';
+import 'package:test_app/view/sigin_screen.dart';
 
 part 'router.gr.dart';
 
@@ -21,5 +20,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: ShipmentHistoryRoute.page, path: Routes.shipmentHistoryRoute),
         AutoRoute(page: ShipmentRoute.page, path: Routes.shipmentRoute),
         AutoRoute(page: EstimateRoute.page, path: Routes.estimateRoute),
+        AutoRoute(page: SignInRoute.page,path:Routes.signInRoute)
       ];
 }

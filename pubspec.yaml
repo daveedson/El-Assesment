@@ -44,7 +44,9 @@ dependencies:
   auto_route: ^7.8.4
   chip_list: ^2.4.3+8
   firebase_core: ^2.22.0
- 
+  firebase_auth: ^4.13.0
+  google_sign_in: ^6.1.6
+  
 
 dev_dependencies:
   flutter_test:

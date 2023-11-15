@@ -45,22 +45,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: NavigationBarViewScreen(),
       );
     },
-    ProfileRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: ProfileScreen(),
-      );
-    },
-    ShipmentHistoryRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: ShipmentHistoryScreen(),
-      );
-    },
     ShipmentRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ShipmentScreen(),
+      );
+    },
+    SignInRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SignInScreen(),
       );
     },
   };
@@ -174,6 +168,20 @@ class ShipmentRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ShipmentRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignInScreen]
+class SignInRoute extends PageRouteInfo<void> {
+  const SignInRoute({List<PageRouteInfo>? children})
+      : super(
+          SignInRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignInRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

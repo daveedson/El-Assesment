@@ -36,9 +36,8 @@ class _CalculateScreenState extends ConsumerState<CalculateScreen> {
           onPressed: () {
             context.pushRoute(const NavigationBarViewRoute());
           },
-        )
-            .animate()
-            .slideX(duration: const Duration(milliseconds: 500), curve: Curves.easeIn),
+        ).animate().slideX(
+            duration: const Duration(milliseconds: 500), curve: Curves.easeIn),
         title: Text(
           locale.calculate,
           style: const TextStyle(
@@ -46,8 +45,12 @@ class _CalculateScreenState extends ConsumerState<CalculateScreen> {
           ),
         )
             .animate()
-            .fadeIn(duration: const Duration(milliseconds: 500), curve: Curves.easeIn)
-            .slideY(duration: const Duration(milliseconds: 500), curve: Curves.easeIn),
+            .fadeIn(
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeIn)
+            .slideY(
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeIn),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
@@ -282,7 +285,6 @@ class _CalculateScreenState extends ConsumerState<CalculateScreen> {
                 alignment: Alignment.bottomCenter,
                 child: ReuseableButton(
                   onPressed: () {
-                    context.pushRoute(const EstimateRoute());
                   },
                   title: 'Calculate',
                 ),
@@ -303,10 +305,12 @@ class ReuseableButton extends StatelessWidget {
   const ReuseableButton({
     super.key,
     required this.onPressed,
-    required this.title,
+    required this.title, 
+    this.color,
   });
   final VoidCallback onPressed;
   final String title;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -314,7 +318,7 @@ class ReuseableButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            shape: const StadiumBorder(), backgroundColor: AppColors.orange),
+            shape: const StadiumBorder(), backgroundColor: color ??AppColors.orange),
         child: Text(
           title,
           style: const TextStyle(color: Colors.white),

@@ -23,7 +23,7 @@ class TrackingComponent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              locale.shipmentNumber,
+              locale.orderId,
               style: TextStyle(color: AppColors.grey2),
             ),
             Row(
@@ -65,10 +65,10 @@ class TrackingComponent extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(locale.sender,
+                    Text(locale.orderPrice,
                         style:
                             TextStyle(color: AppColors.grey2, fontSize: 13.0)),
-                    Text(locale.address2)
+                    Text("£5000")
                   ],
                 ),
                 const Spacer(),
@@ -76,7 +76,7 @@ class TrackingComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      locale.time,
+                      locale.orderDate,
                       style: TextStyle(color: AppColors.grey2, fontSize: 13.0),
                     ),
                     Padding(
@@ -92,7 +92,7 @@ class TrackingComponent extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(width: 5.0),
-                          const Text("2day- 3days"),
+                          const Text("21 / 11 /2023"),
                         ],
                       ),
                     )
@@ -116,10 +116,10 @@ class TrackingComponent extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(locale.receiver,
+                    Text(locale.orderItem,
                         style:
                             TextStyle(color: AppColors.grey2, fontSize: 13.0)),
-                    Text(locale.address1)
+                    Text("Pairs of shoes")
                   ],
                 ),
                 const Spacer(),
@@ -127,12 +127,12 @@ class TrackingComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      locale.status,
+                      locale.orderQuantity,
                       style: TextStyle(color: AppColors.grey2, fontSize: 13.0),
                     ),
                     const Padding(
                       padding: EdgeInsets.only(right: 8.0),
-                      child: Text("Waiting to Collect"),
+                      child: Text("5"),
                     ),
                   ],
                 ),
@@ -155,7 +155,7 @@ class TrackingComponent extends StatelessWidget {
                   Icons.add,
                   color: Colors.orange,
                 ),
-                Text("Add Stop", style: TextStyle(color: Colors.orange)),
+                Text("Track order", style: TextStyle(color: Colors.orange)),
               ],
             )
           ],

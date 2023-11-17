@@ -38,7 +38,7 @@ class _NavigationBarViewScreenState
       bottomNavigationBar: _selectedIndex == 1
           ? SizedBox.shrink()
           : CustomLineIndicatorBottomNavbar(
-              selectedColor: AppColors.purple,
+              selectedColor: AppColors.primarycolor,
               unSelectedColor: Colors.grey,
               backgroundColor: Colors.white,
               currentIndex: _selectedIndex,

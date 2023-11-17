@@ -1,8 +1,8 @@
-import 'moniepoint_test_localizations.dart';
+import 'localizations.dart';
 
 /// The translations for English (`en`).
-class MoniepointLocalizationEn extends MoniepointLocalization {
-  MoniepointLocalizationEn([String locale = 'en']) : super(locale);
+class LocalizationEn extends Localization {
+  LocalizationEn([String locale = 'en']) : super(locale);
 
   @override
   String get profile => 'Profile';

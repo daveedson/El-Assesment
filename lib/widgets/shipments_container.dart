@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/gen/moniepoint_test_localizations.dart';
+import 'package:test_app/gen/localizations.dart';
 import 'package:test_app/ui/app_colors.dart';
 
 class ShipmentContainer extends StatelessWidget {
@@ -12,7 +12,7 @@ class ShipmentContainer extends StatelessWidget {
     required this.progressIcon,
   });
 
-  final MoniepointLocalization locale;
+  final Localization locale;
   final String progressText;
   final Color textColor;
   final String price;
@@ -83,7 +83,7 @@ class ShipmentContainer extends StatelessWidget {
                 Text(
                   '£$price',
                   style: TextStyle(
-                      color: AppColors.purple,
+                      color: AppColors.primarycolor,
                       fontSize: 18.0,
                       fontWeight: FontWeight.w500),
                 ),

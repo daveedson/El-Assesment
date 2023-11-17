@@ -1,16 +1,19 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:test_app/gen/moniepoint_test_localizations.dart';
+import 'package:test_app/gen/localizations.dart';
 import 'package:test_app/ui/app_colors.dart';
 
 class AvailableVehicleComponent extends StatelessWidget {
   const AvailableVehicleComponent({
     super.key,
-    required this.locale, required this.image, required this.title, required this.subtitle,
+    required this.locale,
+    required this.image,
+    required this.title,
+    required this.subtitle,
   });
 
-  final MoniepointLocalization locale;
+  final Localization locale;
   final String image;
   final String title;
   final String subtitle;
@@ -28,7 +31,7 @@ class AvailableVehicleComponent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-             title,
+              title,
               style: TextStyle(color: AppColors.textColor),
             ),
             Text(subtitle,
@@ -36,9 +39,7 @@ class AvailableVehicleComponent extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: Container(
-                  height: 120.0,
-                  width: 120.0,
-                  child: Image.asset(image)),
+                  height: 120.0, width: 120.0, child: Image.asset(image)),
             )
           ],
         ),

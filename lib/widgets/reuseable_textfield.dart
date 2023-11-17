@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/gen/moniepoint_test_localizations.dart';
+import 'package:test_app/gen/localizations.dart';
 import 'package:test_app/ui/app_colors.dart';
 
 class ReuseableTextField extends StatelessWidget {
@@ -11,7 +11,7 @@ class ReuseableTextField extends StatelessWidget {
   });
   final String hint;
   final IconData iconimage;
-  final MoniepointLocalization locale;
+  final Localization locale;
 
   @override
   Widget build(BuildContext context) {

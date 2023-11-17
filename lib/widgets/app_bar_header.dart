@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/gen/moniepoint_test_localizations.dart';
+import 'package:test_app/gen/localizations.dart';
 import 'package:test_app/ui/app_colors.dart';
 
 class AppBarHeader extends StatelessWidget {
   const AppBarHeader({
     super.key,
     required this.locale,
+    required this.name,
+    required this.email,
   });
-
-  final MoniepointLocalization locale;
+  final String name;
+  final String email;
+  final Localization locale;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 210.0,
       width: double.infinity,
-      color: AppColors.purple,
+      color: AppColors.primarycolor,
       child: Column(
         children: [
           const SizedBox(height: 20.0),
@@ -41,26 +44,22 @@ class AppBarHeader extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Icon(
-                          Icons.navigation,
-                          color: Colors.white,
-                          size: 18.0,
-                        ),
                         Text(
-                          locale.location,
+                          "Hello, $name",
                           style: const TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w100),
+                              color: Colors.white,
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.w800),
                         ),
                       ],
                     ),
                     Row(
                       children: [
                         Text(
-                          locale.address,
+                          email,
                           style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w800),
+                            color: Colors.white,
+                          ),
                         ),
                         const Icon(
                           Icons.keyboard_arrow_down_sharp,
@@ -91,7 +90,7 @@ class AppBarHeader extends StatelessWidget {
                 hintStyle: const TextStyle(fontSize: 14.0),
                 prefixIcon: Icon(
                   Icons.search,
-                  color: AppColors.purple,
+                  color: AppColors.primarycolor,
                 ),
                 suffixIcon: Padding(
                   padding: const EdgeInsets.only(right: 10.0),

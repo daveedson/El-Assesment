@@ -5,21 +5,21 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'moniepoint_test_localizations_en.dart';
+import 'localizations_en.dart';
 
-/// Callers can lookup localized strings with an instance of MoniepointLocalization
-/// returned by `MoniepointLocalization.of(context)`.
+/// Callers can lookup localized strings with an instance of Localization
+/// returned by `Localization.of(context)`.
 ///
-/// Applications need to include `MoniepointLocalization.delegate()` in their app's
+/// Applications need to include `Localization.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'gen/moniepoint_test_localizations.dart';
+/// import 'gen/localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: MoniepointLocalization.localizationsDelegates,
-///   supportedLocales: MoniepointLocalization.supportedLocales,
+///   localizationsDelegates: Localization.localizationsDelegates,
+///   supportedLocales: Localization.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -56,18 +56,18 @@ import 'moniepoint_test_localizations_en.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the MoniepointLocalization.supportedLocales
+/// be consistent with the languages listed in the Localization.supportedLocales
 /// property.
-abstract class MoniepointLocalization {
-  MoniepointLocalization(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class Localization {
+  Localization(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static MoniepointLocalization? of(BuildContext context) {
-    return Localizations.of<MoniepointLocalization>(context, MoniepointLocalization);
+  static Localization? of(BuildContext context) {
+    return Localizations.of<Localization>(context, Localization);
   }
 
-  static const LocalizationsDelegate<MoniepointLocalization> delegate = _MoniepointLocalizationDelegate();
+  static const LocalizationsDelegate<Localization> delegate = _LocalizationDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -428,31 +428,31 @@ abstract class MoniepointLocalization {
   String get orderPrice;
 }
 
-class _MoniepointLocalizationDelegate extends LocalizationsDelegate<MoniepointLocalization> {
-  const _MoniepointLocalizationDelegate();
+class _LocalizationDelegate extends LocalizationsDelegate<Localization> {
+  const _LocalizationDelegate();
 
   @override
-  Future<MoniepointLocalization> load(Locale locale) {
-    return SynchronousFuture<MoniepointLocalization>(lookupMoniepointLocalization(locale));
+  Future<Localization> load(Locale locale) {
+    return SynchronousFuture<Localization>(lookupLocalization(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_MoniepointLocalizationDelegate old) => false;
+  bool shouldReload(_LocalizationDelegate old) => false;
 }
 
-MoniepointLocalization lookupMoniepointLocalization(Locale locale) {
+Localization lookupLocalization(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return MoniepointLocalizationEn();
+    case 'en': return LocalizationEn();
   }
 
   throw FlutterError(
-    'MoniepointLocalization.delegate failed to load unsupported locale "$locale". This is likely '
+    'Localization.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'

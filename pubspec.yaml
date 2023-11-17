@@ -46,7 +46,8 @@ dependencies:
   firebase_core: ^2.22.0
   firebase_auth: ^4.13.0
   google_sign_in: ^6.1.6
-  
+  ably_flutter: ^1.2.23
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +66,7 @@ flutter_gen:
   output: lib/gen
   assets:
     outputs:
-      class_name: Moniepoint
+      class_name: Localization
   generate: true
 
   # The "flutter_lints" package below contains a set of recommended lints to

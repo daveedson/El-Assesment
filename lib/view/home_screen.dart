@@ -4,12 +4,15 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:test_app/core/auth_manager.dart';
 import 'package:test_app/ui/app_colors.dart';
 import 'package:test_app/utils/extensions.dart';
 import 'package:test_app/view_model/home_viewmodel.dart';
+import 'package:test_app/view_model/order_details_viewmodel.dart';
 import 'package:test_app/widgets/app_bar_header.dart';
 import 'package:test_app/widgets/available_vehicle_component.dart';
 import 'package:test_app/widgets/tracking_components.dart';
+
 @RoutePage()
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -19,21 +22,40 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
+  void initState() {
+    getStatus();
+    super.initState();
+  }
+
+  void getStatus() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      print("get status");
+
+      ref.read(orderDetailsViewModelProvider).listentoOrderStatus();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final locale = context.locale;
-    final vechicle = ref.read(homeViewModelProvider).vechicle;
+    final authmanager = ref.read(authManagerProvider).user;
     return Scaffold(
       backgroundColor: AppColors.grey,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppBarHeader(locale: locale)
+            AppBarHeader(
+              locale: locale,
+              name: authmanager?.displayName??"", email: authmanager?.email??"",
+            )
                 .animate()
                 .fadeIn(
-                    duration: const Duration(milliseconds: 500), curve: Curves.easeIn)
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeIn)
                 .slideY(
-                    duration: const Duration(milliseconds: 500), curve: Curves.easeIn),
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeIn),
             const SizedBox(
               height: 20.0,
             ),
@@ -103,12 +125,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 class _AvailableVehicleComponent extends ConsumerWidget {
   const _AvailableVehicleComponent({super.key});
 
-  
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locale = context.locale;
-      final vechicle = ref.read(homeViewModelProvider).vechicle;
+    final vechicle = ref.read(homeViewModelProvider).vechicle;
     return Container(
       height: 210.0,
       child: ListView.separated(

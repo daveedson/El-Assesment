@@ -18,6 +18,9 @@ class $ImagesGen {
   /// File path: images/cargo.png
   AssetGenImage get cargo => const AssetGenImage('images/cargo.png');
 
+  /// File path: images/edenlogo.png
+  AssetGenImage get edenlogo => const AssetGenImage('images/edenlogo.png');
+
   /// File path: images/plane.png
   AssetGenImage get plane => const AssetGenImage('images/plane.png');
 
@@ -38,12 +41,21 @@ class $ImagesGen {
   AssetGenImage get truck1 => const AssetGenImage('images/truck1.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [cardBoard, cargo, plane, receive, redtruck, sendPackage, ship, truck1];
+  List<AssetGenImage> get values => [
+        cardBoard,
+        cargo,
+        edenlogo,
+        plane,
+        receive,
+        redtruck,
+        sendPackage,
+        ship,
+        truck1
+      ];
 }
 
-class Moniepoint {
-  Moniepoint._();
+class Locale {
+  Locale._();
 
   static const $ImagesGen images = $ImagesGen();
 }

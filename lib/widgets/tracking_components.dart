@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/gen/moniepoint_test_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:test_app/core/routes.dart';
+import 'package:test_app/gen/localizations.dart';
 import 'package:test_app/ui/app_colors.dart';
+import 'package:test_app/view_model/navigation_viewmodel.dart';
 
-class TrackingComponent extends StatelessWidget {
+class TrackingComponent extends ConsumerWidget {
   const TrackingComponent({
     super.key,
     required this.locale,
   });
 
-  final MoniepointLocalization locale;
+  final Localization locale;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       height: 250.0,
       width: double.infinity,
@@ -68,7 +71,7 @@ class TrackingComponent extends StatelessWidget {
                     Text(locale.orderPrice,
                         style:
                             TextStyle(color: AppColors.grey2, fontSize: 13.0)),
-                    Text("£5000")
+                    const Text("£5000")
                   ],
                 ),
                 const Spacer(),
@@ -95,7 +98,7 @@ class TrackingComponent extends StatelessWidget {
                           const Text("21 / 11 /2023"),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],
@@ -148,15 +151,22 @@ class TrackingComponent extends StatelessWidget {
                 thickness: 0.2,
               ),
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.add,
-                  color: Colors.orange,
-                ),
-                Text("Track order", style: TextStyle(color: Colors.orange)),
-              ],
+            GestureDetector(
+              onTap: () => ref
+                  .read(navigationProvider)
+                  .router
+                  .pushNamed(Routes.oderDetails),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Track order", style: TextStyle(color: Colors.orange)),
+                  Icon(
+                    Icons.arrow_drop_down,
+                    color: Colors.orange,
+                    size: 22.0,
+                  ),
+                ],
+              ),
             )
           ],
         ),

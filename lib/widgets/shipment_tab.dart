@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:test_app/gen/moniepoint_test_localizations.dart';
+import 'package:test_app/gen/localizations.dart';
 
 class ShipmentTab extends StatelessWidget {
   const ShipmentTab({
@@ -13,7 +13,7 @@ class ShipmentTab extends StatelessWidget {
   final String length;
   final String title;
   final Color color;
-  final MoniepointLocalization locale;
+  final Localization locale;
 
   @override
   Widget build(BuildContext context) {

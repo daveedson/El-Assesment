@@ -27,7 +27,7 @@ class _CalculateScreenState extends ConsumerState<CalculateScreen> {
     return Scaffold(
       backgroundColor: AppColors.grey,
       appBar: AppBar(
-        backgroundColor: AppColors.purple,
+        backgroundColor: AppColors.primarycolor,
         automaticallyImplyLeading: true,
         centerTitle: true,
         leading: IconButton(
@@ -284,8 +284,7 @@ class _CalculateScreenState extends ConsumerState<CalculateScreen> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: ReuseableButton(
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   title: 'Calculate',
                 ),
               ).animate().slide(
@@ -305,7 +304,7 @@ class ReuseableButton extends StatelessWidget {
   const ReuseableButton({
     super.key,
     required this.onPressed,
-    required this.title, 
+    required this.title,
     this.color,
   });
   final VoidCallback onPressed;
@@ -318,7 +317,8 @@ class ReuseableButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            shape: const StadiumBorder(), backgroundColor: color ??AppColors.orange),
+            shape: const StadiumBorder(),
+            backgroundColor: color ?? AppColors.orange),
         child: Text(
           title,
           style: const TextStyle(color: Colors.white),

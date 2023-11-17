@@ -27,12 +27,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeScreen(),
       );
     },
-    InProgressRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const InProgressScreen(),
-      );
-    },
+  
     NavigationBarViewRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -45,12 +40,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OrderdetailsScreen(),
       );
     },
-    ShipmentRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ShipmentScreen(),
-      );
-    },
+  
     SignInRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,

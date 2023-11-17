@@ -26,9 +26,8 @@ class SplashViewModel extends ChangeNotifier {
           .read(navigationProvider)
           .router
           .replaceNamed(Routes.navigationBarRoute);
-    
     } else {
-      await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 3));
       ref!.read(navigationProvider).router.replaceNamed(Routes.signInRoute);
     }
   }

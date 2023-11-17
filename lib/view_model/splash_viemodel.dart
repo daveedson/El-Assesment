@@ -15,19 +15,20 @@ class SplashViewModel extends ChangeNotifier {
   final Ref? ref;
 
   SplashViewModel({required this.ref});
-  void init() async{
+  void init() async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       ref!.read(authManagerProvider).authenticateUser(user);
       ref!.read(orderDetailsViewModelProvider).listentoOrderStatus();
       ref!.read(orderDetailsViewModelProvider).getStatusFromLocalStorage();
-    await  Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
       ref!
           .read(navigationProvider)
           .router
           .replaceNamed(Routes.navigationBarRoute);
-      //TODO - Navigate to dashboad
+    
     } else {
+      await Future.delayed(const Duration(seconds: 2));
       ref!.read(navigationProvider).router.replaceNamed(Routes.signInRoute);
     }
   }
